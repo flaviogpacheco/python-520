@@ -1,18 +1,27 @@
 #!/usr/bin/python3
-#Abrir o arquivos usuários
-# Seperar os valores por ","
-# E escrever na tela o dicionario:
-# {"nome : "Hector", "idade" : 27, "email" : hecto.silva@4linux.com.br}
 
-#arquivo = open('arquivos.csv')
-#for linha in arquivo:
-#print(linha{"nome" : 
+# Escrever os nomes e os email  de cada usuario da seguinte forma:
+# flavio..................  ...flaviogpacheco@hotmail.com
 
+# Criar uma função para criar o cabeçalho chamada hprint():
+# NOME................................EMAIL...........................
+
+#Criar uma função chamada fprint() que recebe esess dois
+#Parâmetros e retorna uma string da forma especificada a cima
+# com a numeração de cada linha
+
+def hprint():
+    print('{0:.>4} {1:.<20} {2:.<40}'.format('ID', 'NOME', 'EMAIL'))
+
+def fprint(n, u):
+    n = n.zfill(4)
+    print('{0:.>4} {1:.<20} {2:.>40}' .format(n, u['nome'], u['email']))
+
+usuarios = []
 for l in open('usuarios.csv'):
-    # aqui eu preciso separar por ","
     nome, idade, email = l.split(',')
-    print({
-        "nome"  : nome.strip(), 
-        "email" : email.strip(),
-        "idade" : int(idade.strip())
-        })    
+    usuarios.append({"nome" : nome.strip(), "email" : email.strip(), "idade" : int(idade.strip())})
+
+hprint()
+for i, u in enumerate(sorted(usuarios, key=lambda i : i['nome']), start=1): 
+    fprint(str(i), u)
