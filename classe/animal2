@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+# Classe que define uma abstração de mamíferos
+
+class Animal():
+   
+    def __init__(self):
+        self.peso = 0 
+	self.idade = 0 
+	self.cor = 'Transparente'
+	self.nome = 'Nenhum'
+	self.especie = 'Felino'
+
+gatin = Animal()
+gatin.cor = 'Preto e Branco'
+gatin.peso = 4
+gatin.idade = 3
+gatin.nome = 'Manfred'
+
+gatin2 = Animal()
+gatin2.cor = 'Bege'
+gatin2.nome = 'Richard'
+print(gatin.nome)
+print(gatin2.nome)
+
